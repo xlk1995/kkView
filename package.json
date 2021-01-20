@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/xlk1995/kkView/issues"
   },
-  "homepage": "https://github.com/xlk1995/kkView#readme"
+  "homepage": "https://github.com/xlk1995/kkView#readme",
+  "dependencies": {
+    "vue": "^2.6.12"
+  }
 }
