@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+  <meta charset="UTF-8">
+  <title>KKview</title>
+</head>
+<body>
+  <div id="app">
+    你好，{{msg}}
+  </div>
+</body>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+  let vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        msg: 'xx'
+      }
+    },
+  })
+</script>
+</html>
