@@ -1,11 +1,11 @@
 <template>
 
-  <button class="kk-button">
-    <svg class="i-font" :class="{[`k-${position}`]: true, ['k-loadding']: type === 'loading'}" v-if="type">
+  <button class="kk-button" :class="{[`k-${position}`]: true}">
+    <svg class="i-font icon" v-if="type">
       <use :xlink:href="`#i-${type}`">
       </use>
     </svg>
-    <div :class="{[`k-${position==='left' ? 'right': 'left'}`]: true}">
+    <div class="content">
       <slot></slot>
     </div>
   </button>
@@ -67,13 +67,6 @@ export default {
   align-items: center;
   justify-content: center;
   vertical-align: middle;
-  .k-left {
-    order: 1;
-    margin-right: 0.4em;
-  }
-  .k-right {
-    order: 2;
-  }
   .k-loadding{
     animation: spin 1s linear infinite;
   }
@@ -86,5 +79,23 @@ export default {
   &:focus {
     outline: none;
   }
+  >.icon{
+    order: 1;margin-right: 0.5em;
+  }
+  >.content{
+    order: 2;
+  }
+  &.k-right{
+    >.icon{
+      order: 2;
+      margin-right: 0;
+      margin-left: 0.5em;
+    }
+    >.content{
+      order: 1;
+    }
+  }
+  
+
 }
 </style>
