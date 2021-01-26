@@ -1,10 +1,7 @@
 <template>
 
   <button class="kk-button" :class="{[`k-${position}`]: true}">
-    <svg class="i-font icon" v-if="type">
-      <use :xlink:href="`#i-${type}`">
-      </use>
-    </svg>
+    <kk-icon :type="type" class="icon"></kk-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -12,6 +9,7 @@
 </template>
 
 <script>
+
 export default {
   props: {
     type: {
@@ -21,7 +19,6 @@ export default {
       type: String,
       default: 'left',
       validator: (val) => {
-        console.log(val);
         return val === 'left' || val === 'right'
 
       }
