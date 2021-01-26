@@ -20,7 +20,7 @@
     --button-border-radius: 4px;
     --button-border-color: #999999;
     --button-active-bg: #eeeeee;
-    --button-hover-color: #666666;
+    --button-hover-color: red;
     margin: 20px;
   }
 </style>
@@ -32,7 +32,12 @@
     <kk-button :loading="loading3" @click="loading3 = !loading3" type="download" position="right">按钮</kk-button>
     <kk-button :loading="loading4" @click="loading4 = !loading4" type="down">按钮</kk-button>
     <kk-button :loading="loading1" @click="loading1 = !loading1" type="loading">按钮</kk-button>
-    </iv>
+    <kk-button-group>
+       <kk-button type="left">上一页</kk-button>
+       <kk-button>更多</kk-button>
+       <kk-button type="right" position="right">下一页</kk-button>
+    </kk-button-group>
+  </div>
 </body>
 <script src="./src/app.js"></script>
 <script src="//at.alicdn.com/t/font_2348516_5bb792oiagp.js"></script>
