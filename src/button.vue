@@ -1,7 +1,8 @@
 <template>
 
-  <button class="kk-button" :class="{[`k-${position}`]: true}">
-    <kk-icon :type="type" class="icon"></kk-icon>
+  <button class="kk-button" :class="{[`k-${position}`]: true}" @click="$emit('click')">
+    <kk-icon :type="type" class="icon" v-if="!loading"></kk-icon>
+    <kk-icon type="loading" class="k-loading icon" v-if="loading"></kk-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -12,6 +13,10 @@
 
 export default {
   props: {
+    loading:{
+      type: Boolean,
+      default: false
+    },
     type: {
 
     },
@@ -64,7 +69,7 @@ export default {
   align-items: center;
   justify-content: center;
   vertical-align: middle;
-  .k-loadding{
+  .k-loading{
     animation: spin 1s linear infinite;
   }
   &:hover {

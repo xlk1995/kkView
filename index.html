@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
+
 <head>
   <meta charset="UTF-8">
   <title>KKview</title>
@@ -10,6 +11,7 @@
     padding: 0;
     box-sizing: border-box;
   }
+
   html {
     --button-height: 32px;
     --font-size: 14px;
@@ -22,17 +24,18 @@
     margin: 20px;
   }
 </style>
+
 <body>
   <div id="app">
-    <kk-button>按钮</kk-button>
-    <kk-button type="setting" position="left">按钮</kk-button>
-    <kk-button type="download" position="right">按钮</kk-button>
-    <kk-button type="down">按钮</kk-button>
-    <kk-button type="loading">按钮</kk-button>
-    
-  </div>
+    <kk-button :loading="loading1" @click="loading1 = !loading1">按钮</kk-button>
+    <kk-button :loading="loading2" @click="loading2 = !loading2" type="setting" position="left">按钮</kk-button>
+    <kk-button :loading="loading3" @click="loading3 = !loading3" type="download" position="right">按钮</kk-button>
+    <kk-button :loading="loading4" @click="loading4 = !loading4" type="down">按钮</kk-button>
+    <kk-button :loading="loading1" @click="loading1 = !loading1" type="loading">按钮</kk-button>
+    </iv>
 </body>
 <script src="./src/app.js"></script>
 <script src="//at.alicdn.com/t/font_2348516_5bb792oiagp.js"></script>
 </script>
+
 </html>
