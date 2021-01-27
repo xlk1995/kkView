@@ -1,6 +1,6 @@
 <template>
 
-  <button class="kk-button" :class="{[`k-${position}`]: true}" @click="$emit('click')">
+  <button class="kk-button kk2" :class="{[`k-${position}`]: true}" @click="$emit('click')">
     <kk-icon :type="type" class="icon" v-if="!loading"></kk-icon>
     <kk-icon type="loading" class="k-loading icon" v-if="loading"></kk-icon>
     <div class="content">
