@@ -15,7 +15,14 @@ export default {
 
   },
   mounted () {
-
+    for (let node of this.$el.children){
+      let name = node.nodeName.toLowerCase()
+      if (name !== 'button'){
+        console.warn(`button-group组件需要里面的元素都为button，而你使用了 ${name} `)
+      }
+      
+    }
+    
   },
   methods: {
 
