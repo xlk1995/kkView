@@ -10,8 +10,11 @@
 </template>
 
 <script>
-
+import kkIcon from './icon'
 export default {
+  components:{
+    kkIcon
+  },
   props: {
     loading:{
       type: Boolean,
