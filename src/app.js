@@ -3,6 +3,8 @@ import Button from './button'
 import Icon from './icon'
 import ButtonGroup from './button-group'
 import chai from 'chai'
+import spies from 'chai-spies';
+chai.use(spies);
 
 var expect = chai.expect
 
@@ -82,10 +84,10 @@ new Vue({
     }
   })
   vm.$mount(div)
-  vm.$on('click',function(){
-    expect(1).to.equal(1)
-  })
+  let spy = chai.spy(function(){})
+  vm.$on('click',spy)
   let button = vm.$el
-  button.click()  
+  button.click()
+  expect(spy).to.have.been.called()
   
 }
