@@ -68,6 +68,8 @@ new Vue({
   let svg = vm.$el.querySelector('svg')
   let {order} = window.getComputedStyle(svg)
   expect(order).to.equal('1')
+  vm.$el.remove()
+  vm.$destroy()
 }
 
 {
@@ -85,4 +87,5 @@ new Vue({
   })
   let button = vm.$el
   button.click()  
+  
 }
