@@ -24,21 +24,36 @@
     margin: 20px;
   }
 </style>
-
+<style>
+  .group{
+    padding: 20px;
+  }
+</style>
 <body>
   <div id="app">
-    <kk-button :loading="loading1" @click="loading1 = !loading1">按钮</kk-button>
-    <kk-button :loading="loading2" @click="loading2 = !loading2" type="setting" position="left">按钮</kk-button>
-    <kk-button :loading="loading3" @click="loading3 = !loading3" type="download" position="right">按钮</kk-button>
-    <kk-button :loading="loading4" @click="loading4 = !loading4" type="down">按钮</kk-button>
-    <kk-button :loading="loading1" @click="loading1 = !loading1" type="loading">按钮</kk-button>
-    <kk-button-group>
-      <div>
-       <kk-button type="left">上一页</kk-button>        
-      </div>
-       <kk-button>更多</kk-button>
-       <kk-button type="right" position="right">下一页</kk-button>
-    </kk-button-group>
+    {{msg}}
+    <div class="group">
+      <kk-input value="张三"></kk-input>
+      <kk-input v-model="msg"></kk-input>
+      <kk-input value="李四" type="password"></kk-input>
+      <kk-input value="王五"  disabled></kk-input>
+      <kk-input value="赵六" error="我错了"></kk-input>
+    </div>
+    <div class="group">
+      <kk-button :loading="loading1" @click="loading1 = !loading1">按钮</kk-button>
+      <kk-button :loading="loading2" @click="loading2 = !loading2" type="setting" position="left">按钮</kk-button>
+      <kk-button :loading="loading3" @click="loading3 = !loading3" type="download" position="right">按钮</kk-button>
+      <kk-button :loading="loading4" @click="loading4 = !loading4" type="down">按钮</kk-button>
+      <kk-button :loading="loading1" @click="loading1 = !loading1" type="loading">按钮</kk-button>
+      <kk-button-group>
+
+          <kk-button type="left">上一页</kk-button>
+
+        <kk-button>更多</kk-button>
+        <kk-button type="right" position="right">下一页</kk-button>
+      </kk-button-group>
+    </div>
+
   </div>
 </body>
 <script src="./src/app.js"></script>
